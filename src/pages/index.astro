@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Layout title="Welcome to Mentorship">
+		  <Header />
+		  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+		    <div class="px-4 py-6 sm:px-0">
+		      <div class="bg-white rounded-lg shadow px-5 py-6 sm:px-6">
+		        <h1 class="text-4xl font-bold text-gray-900 mb-4">Find Your Perfect Mentor</h1>
+		        <p class="text-xl text-gray-500">Connect with experienced professionals who can guide you on your journey.</p>
+		        
+		        <div class="mt-8 flex gap-4">
+		          <a href="/mentors" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+		            Find a Mentor
+		          </a>
+		          <a href="/about" class="inline-flex items-center px-4 py-2 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+		            Learn More
+		          </a>
+		        </div>
+		      </div>
+		    </div>
+		  </main>
+		</Layout>
+	</body>
+</html>

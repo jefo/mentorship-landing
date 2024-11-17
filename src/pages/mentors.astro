@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const mentors = [
+  {
+    name: 'Alex Johnson',
+    expertise: 'Frontend Development',
+    description: 'Experienced React developer with 8 years in web development',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Sarah Williams',
+    expertise: 'Backend Development',
+    description: 'Python expert specializing in Django and FastAPI',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  },
+  {
+    name: 'Michael Chen',
+    expertise: 'DevOps',
+    description: 'AWS certified solutions architect with strong Docker and Kubernetes experience',
+    image: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
+  }
+];
+---
+
+<Layout title="Our Mentors">
+  <Header />
+  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 sm:px-0">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8">Our Mentors</h1>
+      
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {mentors.map((mentor) => (
+          <div class="bg-white overflow-hidden shadow rounded-lg">
+            <div class="p-6">
+              <div class="flex items-center">
+                <div class="h-16 w-16 rounded-full overflow-hidden">
+                  <img src={mentor.image} alt={mentor.name} class="h-full w-full object-cover" />
+                </div>
+                <div class="ml-4">
+                  <h2 class="text-xl font-semibold text-gray-900">{mentor.name}</h2>
+                  <p class="text-sm text-indigo-600">{mentor.expertise}</p>
+                </div>
+              </div>
+              <p class="mt-4 text-gray-500">{mentor.description}</p>
+              <div class="mt-6">
+                <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                  Book a Session
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+</Layout>
