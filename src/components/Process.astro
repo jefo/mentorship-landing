@@ -1,0 +1,129 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const steps = [
+  {
+    title: 'Диагностика и планирование',
+    description: 'Оценим ваш текущий уровень, определим цели развития и составим персональный план с учетом ваших приоритетов.',
+    icon: 'ri:file-list-3-line',
+    items: [
+      'Оценка текущего уровня',
+      'Определение целей развития',
+      'Составление персонального плана',
+      'Выбор формата обучения'
+    ]
+  },
+  {
+    title: 'Практическое обучение',
+    description: 'Интенсивная работа над реальными проектами с регулярной обратной связью от ментора.',
+    icon: 'ri:code-s-slash-line',
+    items: [
+      'Работа над проектами',
+      'Code review и рефакторинг',
+      'System Design сессии',
+      'Практика алгоритмов'
+    ]
+  },
+  {
+    title: 'Подготовка к собеседованиям',
+    description: 'Отработка навыков прохождения технических интервью и подготовка портфолио.',
+    icon: 'ri:slideshow-line',
+    items: [
+      'Mock-интервью',
+      'Разбор типовых вопросов',
+      'Работа над портфолио',
+      'Подготовка резюме'
+    ]
+  }
+];
+
+const formats = [
+  {
+    icon: 'ri:video-chat-line',
+    title: '1-на-1 онлайн сессии',
+    description: 'Персональные занятия с ментором в удобное время'
+  },
+  {
+    icon: 'ri:chat-3-line',
+    title: 'Поддержка в чате',
+    description: 'Ответы на вопросы между сессиями'
+  },
+  {
+    icon: 'ri:code-s-slash-line',
+    title: 'Code Review',
+    description: 'Регулярный разбор вашего кода'
+  },
+  {
+    icon: 'ri:book-2-line',
+    title: 'База знаний',
+    description: 'Доступ к материалам и ресурсам'
+  }
+];
+---
+
+<div class="bg-slate-50 py-24" id="program">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
+        Программа и процесс обучения
+      </h2>
+      <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+        Структурированный подход к развитию навыков и карьерному росту
+      </p>
+    </div>
+
+    <!-- Process Steps -->
+    <div class="space-y-12 mb-20">
+      {steps.map((step, index) => (
+        <div class="flex flex-col md:flex-row gap-8 items-start">
+          <div class="md:w-1/3">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-indigo-100 w-12 h-12 rounded-xl flex items-center justify-center">
+                <Icon name={step.icon} class="w-6 h-6 text-indigo-600" />
+              </div>
+              <div class="text-2xl font-bold text-slate-900">Шаг {index + 1}</div>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{step.title}</h3>
+            <p class="text-slate-600">{step.description}</p>
+          </div>
+          <div class="md:w-2/3 bg-white rounded-xl p-6 shadow-sm">
+            <ul class="grid sm:grid-cols-2 gap-4">
+              {step.items.map(item => (
+                <li class="flex items-start gap-2">
+                  <Icon name="ri:checkbox-circle-line" class="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span class="text-slate-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Learning Formats -->
+    <div class="bg-gradient-to-br from-indigo-50 to-slate-50 rounded-2xl p-8 md:p-12">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Форматы обучения</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        {formats.map(format => (
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="bg-indigo-100 w-12 h-12 rounded-xl flex items-center justify-center">
+                <Icon name={format.icon} class="w-6 h-6 text-indigo-600" />
+              </div>
+              <h4 class="text-xl font-semibold">{format.title}</h4>
+            </div>
+            <p class="text-slate-600 mb-4">{format.description}</p>
+            <ul class="space-y-3">
+              {format.items && format.items.map(item => (
+                <li class="flex items-start gap-2">
+                  <Icon name="ri:checkbox-circle-line" class="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span class="text-slate-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Process from '../components/Process.astro';
+import Results from '../components/Results.astro';
+
+const title = "Mentorship Program: Рост до Middle+ за 2-3 месяца | Middle+ Mentor";
+const description = "Системная подготовка разработчиков к уровню Middle+. Гарантированный рост за 2-3 месяца с опытным ментором. 30+ успешных кейсов, средний рост зарплаты $1500+";
 ---
 
 <html lang="en">
@@ -9,27 +15,19 @@ import Header from '../components/Header.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
-		<Layout title="Welcome to Mentorship">
-		  <Header />
-		  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-		    <div class="px-4 py-6 sm:px-0">
-		      <div class="bg-white rounded-lg shadow px-5 py-6 sm:px-6">
-		        <h1 class="text-4xl font-bold text-gray-900 mb-4">Find Your Perfect Mentor</h1>
-		        <p class="text-xl text-gray-500">Connect with experienced professionals who can guide you on your journey.</p>
-		        
-		        <div class="mt-8 flex gap-4">
-		          <a href="/mentors" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-		            Find a Mentor
-		          </a>
-		          <a href="/about" class="inline-flex items-center px-4 py-2 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-		            Learn More
-		          </a>
-		        </div>
-		      </div>
-		    </div>
+		<Layout 
+		  title={title}
+		  description={description}
+		>
+		  <main class="overflow-hidden">
+		    <Hero />
+		    <Features />
+		    <Process />
+		    <Results />
 		  </main>
 		</Layout>
 	</body>

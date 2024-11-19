@@ -1,0 +1,206 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const stats = [
+  {
+    value: '30+',
+    label: 'успешных переходов на Middle+',
+    icon: 'ri:award-line'
+  },
+  {
+    value: '$1500',
+    label: 'средний рост зарплаты',
+    icon: 'ri:money-dollar-circle-line'
+  },
+  {
+    value: '92%',
+    label: 'получают оффер за 3 месяца',
+    icon: 'ri:time-line'
+  },
+  {
+    value: '100%',
+    label: 'возврат инвестиций за 1-2 месяца',
+    icon: 'ri:line-chart-line'
+  }
+];
+
+const cases = [
+  {
+    role: 'Frontend Developer',
+    profile: {
+      position: 'Junior (1.5 года опыта)',
+      salaryBefore: '$1200',
+      salaryAfter: '$2800',
+      duration: '2.5 месяца'
+    },
+    improvements: [
+      'System Design',
+      'Архитектурные паттерны',
+      'Оптимизация производительности',
+      'Навыки презентации решений'
+    ]
+  },
+  {
+    role: 'React Developer',
+    profile: {
+      position: 'Junior+',
+      salaryBefore: '$1500',
+      salaryAfter: '$3000',
+      duration: '2 месяца'
+    },
+    improvements: [
+      'Проектирование компонентов',
+      'Стейт-менеджмент',
+      'Микрофронтенды',
+      'Тестирование'
+    ]
+  }
+];
+
+const mentorAchievements = [
+  '8+ лет в разработке',
+  'Senior/Lead позиции в ведущих компаниях',
+  'Опыт найма и развития команд',
+  'Регулярное проведение технических собеседований'
+];
+
+const pricing = {
+  price: '$1500',
+  installments: '3 x $600',
+  features: [
+    'Возможна оплата частями',
+    'Гарантия возврата при отсутствии результата 🤜🤛',
+    'Поддержка до достижения цели',
+    'Доступ к базе знаний и материалам'
+  ]
+};
+---
+
+<div class="bg-white py-24" id="results">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+      {stats.map(stat => (
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-100 mb-4">
+            <Icon name={stat.icon} class="w-8 h-8 text-indigo-600" />
+          </div>
+          <div class="text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
+          <div class="text-slate-600">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
+        Истории успеха
+      </h2>
+      <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+        Реальные результаты наших выпускников
+      </p>
+    </div>
+
+    <!-- Success Cases -->
+    <div class="grid md:grid-cols-2 gap-8 mb-20">
+      {cases.map(case_ => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-indigo-100 w-12 h-12 rounded-xl flex items-center justify-center">
+              <Icon name="ri:code-box-line" class="w-6 h-6 text-indigo-600" />
+            </div>
+            <h3 class="text-xl font-semibold">{case_.role}</h3>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-6 mb-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <div class="text-sm text-slate-500 mb-1">Позиция</div>
+                <div class="font-medium">{case_.profile.position}</div>
+              </div>
+              <div>
+                <div class="text-sm text-slate-500 mb-1">Срок</div>
+                <div class="font-medium">{case_.profile.duration}</div>
+              </div>
+              <div>
+                <div class="text-sm text-slate-500 mb-1">Зарплата до</div>
+                <div class="font-medium">{case_.profile.salaryBefore}</div>
+              </div>
+              <div>
+                <div class="text-sm text-slate-500 mb-1">Зарплата после</div>
+                <div class="font-medium text-green-600">{case_.profile.salaryAfter}</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="font-medium mb-3">Ключевые улучшения:</div>
+            <ul class="space-y-2">
+              {case_.improvements.map(improvement => (
+                <li class="flex items-start gap-2">
+                  <Icon name="ri:check-line" class="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <span class="text-slate-700">{improvement}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Mentor & Pricing -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- About Mentor -->
+      <div class="bg-gradient-to-br from-slate-900 to-indigo-900 text-white rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-white/10 backdrop-blur-sm w-12 h-12 rounded-xl flex items-center justify-center">
+            <Icon name="ri:user-3-line" class="w-6 h-6 text-white" />
+          </div>
+          <h3 class="text-xl font-semibold">О менторе</h3>
+        </div>
+
+        <ul class="space-y-4">
+          {mentorAchievements.map(achievement => (
+            <li class="flex items-start gap-3">
+              <Icon name="ri:check-line" class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+              <span class="text-slate-200">{achievement}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Pricing -->
+      <div class="bg-slate-50 rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="bg-indigo-100 w-12 h-12 rounded-xl flex items-center justify-center">
+            <Icon name="ri:money-dollar-circle-line" class="w-6 h-6 text-indigo-600" />
+          </div>
+          <h3 class="text-xl font-semibold">Инвестиции в развитие</h3>
+        </div>
+
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-slate-900">{pricing.price}</div>
+          <div class="text-slate-600">или {pricing.installments} при оплате частями</div>
+        </div>
+
+        <ul class="space-y-4">
+          {pricing.features.map(feature => (
+            <li class="flex items-start gap-3">
+              <Icon name="ri:check-line" class="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+              <span class="text-slate-700">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-8">
+          <a 
+            href="#contact"
+            class="inline-flex justify-center items-center w-full px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors"
+          >
+            Начать обучение
+            <Icon name="ri:arrow-right-line" class="w-5 h-5 ml-2" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

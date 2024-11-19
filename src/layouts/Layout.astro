@@ -1,28 +1,75 @@
 ---
 interface Props {
   title: string;
+  description?: string;
+  keywords?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
 }
 
-const { title } = Astro.props;
+const { 
+  title, 
+  description = "Системная подготовка разработчиков к уровню Middle+. Гарантированный рост за 2-3 месяца с опытным ментором.",
+  keywords = "ментор программист, Middle разработчик, повышение junior developer, карьерный рост IT, подготовка к middle",
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = "/og-image.jpg"
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={ogTitle} />
+    <meta property="twitter:description" content={ogDescription} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <body class="min-h-screen bg-gray-50">
+  <body class="min-h-screen bg-white font-inter text-gray-900 antialiased">
     <slot />
   </body>
 </html>
 
 <style is:global>
   :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+    --primary: 79, 70, 229;
+    --primary-light: 99, 102, 241;
+    --secondary: 45, 212, 191;
+    --accent: 139, 92, 246;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
   }
 </style>

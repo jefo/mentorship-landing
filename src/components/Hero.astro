@@ -1,0 +1,80 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+
+  <!-- Navigation -->
+  <nav class="relative flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+    <div class="text-xl font-bold">MentorShip</div>
+    <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-lg flex items-center gap-2 transition-colors">
+      Записаться на консультацию
+      <Icon name="ri:arrow-right-s-line" class="w-4 h-4" />
+    </a>
+  </nav>
+
+  <!-- Main Hero Content -->
+  <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-24">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
+        Вырасти с Junior до Middle+ за 2-3 месяца
+      </h1>
+      <p class="text-xl text-slate-300 mb-8">
+        Системная подготовка разработчиков к уровню Middle+ с опытным ментором. Гарантированный рост через практику, code review и работу над реальными проектами.
+      </p>
+      
+      <!-- Quick Stats -->
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-colors">
+          <div class="flex items-start gap-4">
+            <Icon name="ri:line-chart-line" class="w-8 h-8 text-indigo-400" />
+            <div>
+              <div class="text-2xl font-bold mb-2">30+</div>
+              <div class="text-slate-300">успешных переходов с Junior на Middle</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-colors">
+          <div class="flex items-start gap-4">
+            <Icon name="ri:time-line" class="w-8 h-8 text-indigo-400" />
+            <div>
+              <div class="text-2xl font-bold mb-2">2-3 месяца</div>
+              <div class="text-slate-300">средний срок подготовки</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-colors">
+          <div class="flex items-start gap-4">
+            <Icon name="ri:money-dollar-circle-line" class="w-8 h-8 text-green-400" />
+            <div>
+              <div class="text-2xl font-bold mb-2">$1500+</div>
+              <div class="text-slate-300">средний рост зарплаты</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-colors">
+          <div class="flex items-start gap-4">
+            <Icon name="ri:shield-check-line" class="w-8 h-8 text-indigo-400" />
+            <div>
+              <div class="text-2xl font-bold mb-2">100%</div>
+              <div class="text-slate-300">гарантия возврата средств</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex justify-center items-center px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-colors">
+          Начать обучение
+          <Icon name="ri:arrow-right-s-line" class="w-5 h-5 ml-2" />
+        </a>
+        <a href="#program" class="inline-flex justify-center items-center px-6 py-3 rounded-lg bg-slate-700 hover:bg-slate-600 text-white font-semibold transition-colors">
+          Узнать программу
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

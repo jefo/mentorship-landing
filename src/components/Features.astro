@@ -1,0 +1,74 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const features = [
+  {
+    icon: 'ri:code-s-slash-line',
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    title: 'Системный подход к росту',
+    items: [
+      'Комплексная программа развития',
+      'Фокус на практических навыках',
+      'Работа над реальными проектами',
+      'Регулярная обратная связь'
+    ]
+  },
+  {
+    icon: 'ri:team-line',
+    iconBg: 'bg-green-100',
+    iconColor: 'text-green-600',
+    title: 'Персональное менторство',
+    items: [
+      'Индивидуальный план развития',
+      'Регулярные 1-на-1 сессии',
+      'Поддержка между сессиями',
+      'Работа над сильными сторонами'
+    ]
+  },
+  {
+    icon: 'ri:rocket-line',
+    iconBg: 'bg-indigo-100',
+    iconColor: 'text-indigo-600',
+    title: 'Ускоренный карьерный рост',
+    items: [
+      'Подготовка к собеседованиям',
+      'Работа над резюме и портфолио',
+      'Развитие софт-скиллов',
+      'Нетворкинг в IT-сообществе'
+    ]
+  }
+];
+---
+
+<div class="bg-white py-24" id="features">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
+        Почему разработчики выбирают нашу программу
+      </h2>
+      <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+        Системный подход к развитию, основанный на опыте успешных переходов с Junior на Middle+
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map(feature => (
+        <div class="bg-slate-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+          <div class={`${feature.iconBg} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
+            <Icon name={feature.icon} class={`w-6 h-6 ${feature.iconColor}`} />
+          </div>
+          <h3 class="text-xl font-semibold mb-3">{feature.title}</h3>
+          <ul class="space-y-3 text-slate-600">
+            {feature.items.map(item => (
+              <li class="flex items-start gap-2">
+                <Icon name="ri:checkbox-circle-line" class="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
