@@ -41,7 +41,7 @@ const ResultsSection = () => {
 
   const metrics = [
     {
-      value: "+$1500",
+      value: "+70%",
       label: "Средний рост зарплаты",
       description: "после прохождения программы",
       icon: <DollarSign className="w-6 h-6 text-green-500" />,

@@ -1,0 +1,83 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const advantages = [
+  {
+    title: 'Дешевле курсов, лучше самообучения',
+    description: 'Персональная программа обучения позволяет сфокусироваться только на том, что нужно именно вам. Никаких лишних тем и потерянного времени. Результат достигается в 2-3 раза быстрее, чем на курсах.',
+    icon: 'ri:money-dollar-circle-line',
+    image: '/images/cost-effective.svg',
+    metrics: ['1-3 месяца вместо 6-12', 'Экономия до 70% бюджета', 'Только нужные навыки']
+  },
+  {
+    title: 'Ментор всегда на связи',
+    description: 'Застряли с задачей? Ваш персональный ментор доступен 24/7 через чат. Никаких ожиданий ответа "до следующего урока" - получайте помощь тогда, когда она нужна.',
+    icon: 'ri:customer-service-2-line',
+    image: '/images/mentor-support.svg',
+    metrics: ['Ответ в течение часа', 'Код ревью в тот же день', 'Помощь с выбором технологий']
+  },
+  {
+    title: 'Реальные проекты и задачи',
+    description: 'Вместо абстрактных упражнений вы работаете над настоящими проектами. Учитесь писать поддерживаемый код, проектировать архитектуру и принимать инженерные решения.',
+    icon: 'ri:git-repository-line',
+    image: '/images/real-projects.svg',
+    metrics: ['Проекты для портфолио', 'Работа с реальным кодом', 'Практика code review']
+  },
+  {
+    title: 'Гарантированный рост дохода',
+    description: 'Наша программа нацелена на конкретный результат - увеличение вашей зарплаты. Мы готовим вас к собеседованиям, прокачиваем технический язык и помогаем уверенно презентовать свои навыки.',
+    icon: 'ri:line-chart-line',
+    image: '/images/salary-growth.svg',
+    metrics: ['Рост зарплаты на 100-150%', 'Больше откликов на резюме', 'Успешные собеседования']
+  }
+];
+---
+
+<div class="bg-gradient-to-b from-white to-slate-50 py-24" id="why-choose-us">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
+        Почему разработчики выбирают нашу программу
+      </h2>
+      <p class="text-slate-600 text-xl max-w-3xl mx-auto">
+        Мы создали программу, которая сочетает лучшее из двух миров: 
+        структурированное обучение курсов и персональную поддержку менторства
+      </p>
+    </div>
+
+    <div class="space-y-24">
+      {advantages.map((advantage, index) => (
+        <div class={`flex flex-col lg:flex-row gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          <div class="flex-1 lg:max-w-xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-indigo-100 w-14 h-14 rounded-xl flex items-center justify-center">
+                <Icon name={advantage.icon} class="w-8 h-8 text-indigo-600" />
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">{advantage.title}</h3>
+            </div>
+            <p class="text-lg text-slate-600 mb-8">{advantage.description}</p>
+            <div class="grid sm:grid-cols-3 gap-4">
+              {advantage.metrics.map(metric => (
+                <div class="bg-white p-4 rounded-xl shadow-sm">
+                  <div class="flex items-center gap-2">
+                    <Icon name="ri:checkbox-circle-fill" class="w-5 h-5 text-green-500" />
+                    <span class="text-slate-700 font-medium">{metric}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="flex-1 lg:max-w-xl">
+            <div class="relative aspect-square">
+              <img 
+                src={advantage.image} 
+                alt={advantage.title}
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
