@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="200" cy="200" r="180" fill="#EEF2FF" opacity="0.5"/>
+    
+    <!-- Speech Bubbles -->
+    <path d="M140 160C140 151.716 146.716 145 155 145H245C253.284 145 260 151.716 260 160V200C260 208.284 253.284 215 245 215H155C146.716 215 140 208.284 140 200V160Z" fill="#4F46E5" opacity="0.1"/>
+    <path d="M142 162C142 154.268 148.268 148 156 148H244C251.732 148 258 154.268 258 162V198C258 205.732 251.732 212 244 212H156C148.268 212 142 205.732 142 198V162Z" fill="white" stroke="#4F46E5" stroke-width="2"/>
+    
+    <!-- Code Symbols -->
+    <path d="M180 170L160 180L180 190" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M220 170L240 180L220 190" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Star Rating -->
+    <path d="M170 240L180 220L190 240L180 260L170 240Z" fill="#4F46E5" opacity="0.6"/>
+    <path d="M200 240L210 220L220 240L210 260L200 240Z" fill="#4F46E5" opacity="0.4"/>
+    <path d="M230 240L240 220L250 240L240 260L230 240Z" fill="#4F46E5" opacity="0.2"/>
+</svg>

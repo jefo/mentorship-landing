@@ -1,0 +1,51 @@
+---
+const options = [
+  {
+    title: 'Если вы хотите сменить работу — сейчас или в будущем',
+    description: 'Узнаете, как оформить резюме и портфолио, которые точно привлекут внимание рекрутеров. Поймёте, как вести себя на собеседованиях и общаться с потенциальными работодателями.',
+    image: '/images/career-change.webp'
+  },
+  {
+    title: 'Если стремитесь к повышению',
+    description: 'Научитесь презентовать результаты своей работы и аргументировать, почему вы достойны новой должности. Поймёте, как говорить с руководителем о зарплате, компетенциях и зонах ответственности.',
+    image: '/images/career-growth.webp'
+  }
+];
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-slate-900 mb-16">
+      Поможем с поиском работы или развитием на текущем месте
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {options.map((option) => (
+        <div class="bg-slate-100 rounded-2xl overflow-hidden">
+          <div class="aspect-[16/9] relative">
+            <img 
+              src={option.image} 
+              alt={option.title}
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-slate-900 mb-4">
+              {option.title}
+            </h3>
+            <p class="text-slate-600">
+              {option.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .aspect-[16/9] {
+    aspect-ratio: 16/9;
+  }
+</style>

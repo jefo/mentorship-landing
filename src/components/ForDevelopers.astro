@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const categories = [
+  {
+    title: 'Для начинающих React-разработчиков',
+    description: 'Освойте современные практики React и научитесь писать чистый, масштабируемый код. Получите детальный код-ревью и обратную связь от senior разработчиков.',
+    image: '/images/junior-dev.webp',
+    icon: 'ri:reactjs-line'
+  },
+  {
+    title: 'Для React-разработчиков с опытом 1-2 года',
+    description: 'Расширьте свой стек, изучите продвинутые паттерны и архитектурные решения. Освойте современную экосистему React, включая TypeScript, Redux Toolkit и тестирование.',
+    image: '/images/middle-dev.webp',
+    icon: 'ri:code-s-slash-line'
+  },
+  {
+    title: 'Для разработчиков на других фреймворках',
+    description: 'Быстро освоите React и его экосистему, опираясь на ваш текущий опыт. Научитесь применять лучшие практики React в enterprise-проектах.',
+    image: '/images/senior-dev.webp',
+    icon: 'ri:arrow-up-circle-line'
+  }
+];
+---
+
+<section class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-slate-900 mb-16 max-w-3xl">
+      Это курс для разработчиков с опытом, которые хотят вырасти профессионально
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {categories.map(category => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-14 h-14 rounded-xl bg-indigo-100 flex items-center justify-center mb-6">
+            <Icon name={category.icon} class="w-8 h-8 text-indigo-600" />
+          </div>
+          
+          <h3 class="text-xl font-bold text-slate-900 mb-4">
+            {category.title}
+          </h3>
+          
+          <p class="text-slate-600 mb-6">
+            {category.description}
+          </p>
+          
+          <img 
+            src={category.image} 
+            alt={category.title}
+            class="w-full h-48 object-cover rounded-xl"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

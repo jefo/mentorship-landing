@@ -1,9 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
+import WhyChooseUs from '../components/WhyChooseUsV2.astro';
 import Process from '../components/Process.astro';
 import Results from '../components/Results.astro';
+import ForDevelopers from '../components/ForDevelopers.astro';
+import Requirements from '../components/Requirements.astro';
+import Technologies from '../components/Technologies.astro';
+import ModernApproaches from '../components/ModernApproaches.astro';
+import ProgramDuration from '../components/ProgramDuration.astro';
+import CareerHelp from '../components/CareerHelp.astro';
+import SupportTeam from '../components/SupportTeam.astro';
+import Pricing from '../components/Pricing.astro';
+import StartTest from '../components/StartTest.astro';
+import Advantages from '../components/Advantages.astro';
 
 const title = "Mentorship Program: Рост до Middle за 2-3 месяца | Middle Mentor";
 const description = "Системная подготовка разработчиков к уровню Middle. Гарантированный рост за 2-3 месяца с опытным ментором. 30+ успешных кейсов, средний рост зарплаты $1000+";
@@ -17,17 +27,67 @@ const description = "Системная подготовка разработч�
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 	</head>
-	<body>
+	<body class="font-sans antialiased">
 		<Layout 
 		  title={title}
 		  description={description}
 		>
 		  <main class="overflow-hidden">
 		    <Hero />
+			<Advantages />
+		    <ForDevelopers />
+		    <Requirements />
+		    <Technologies />
+		    <ModernApproaches />
+		    <ProgramDuration />
+		    <CareerHelp />
+		    <SupportTeam />
+		    <Pricing />
+		    <StartTest />
 		    <WhyChooseUs />
 		    <Process />
 		    <Results />
+
+		    <!-- Contact Form -->
+		    <section id="contact" class="bg-slate-900 text-white py-24">
+		      <div class="max-w-7xl mx-auto px-6">
+		        <div class="max-w-3xl mx-auto text-center">
+		          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+		            Начните свой путь к Middle прямо сейчас
+		          </h2>
+		          <p class="text-slate-300 text-lg mb-8">
+		            Оставьте заявку на бесплатную консультацию с ментором
+		          </p>
+		          <form class="space-y-4">
+		            <input 
+		              type="text" 
+		              placeholder="Ваше имя" 
+		              class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500"
+		            />
+		            <input 
+		              type="email" 
+		              placeholder="Email" 
+		              class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500"
+		            />
+		            <textarea 
+		              placeholder="Ваш текущий уровень и цели" 
+		              rows="4"
+		              class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500"
+		            ></textarea>
+		            <button 
+		              type="submit"
+		              class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+		            >
+		              Отправить заявку
+		            </button>
+		          </form>
+		        </div>
+		      </div>
+		    </section>
 		  </main>
 		</Layout>
 	</body>

@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const technologies = [
+  // Core
+  { name: 'React Hooks', category: 'core' },
+  { name: 'TypeScript', category: 'core' },
+  { name: 'Redux Toolkit', category: 'core' },
+  { name: 'React Router', category: 'core' },
+  { name: 'React Query', category: 'core' },
+
+  // Testing
+  { name: 'Jest', category: 'testing' },
+  { name: 'React Testing Library', category: 'testing' },
+  { name: 'Cypress', category: 'testing' },
+  { name: 'Storybook', category: 'testing' },
+  { name: 'Playwright', category: 'testing' },
+
+  // Build & Tools
+  { name: 'Webpack', category: 'tools' },
+  { name: 'Vite', category: 'tools' },
+  { name: 'ESLint', category: 'tools' },
+  { name: 'Git Flow', category: 'tools' },
+  { name: 'Docker', category: 'tools' },
+
+  // Architecture & Patterns
+  { name: 'Clean Architecture', category: 'patterns' },
+  { name: 'Design Patterns', category: 'patterns' },
+  { name: 'SOLID', category: 'patterns' },
+  { name: 'DRY & KISS', category: 'patterns' },
+  { name: 'Feature-Sliced Design', category: 'patterns' }
+];
+---
+
+<section class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-slate-900 mb-16">
+      Технологии, которые вы сможете применять в работе
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      {technologies.map(tech => (
+        <div class="bg-white rounded-xl p-4 flex items-center gap-3 shadow-sm group hover:shadow-md transition-shadow">
+          <div class="w-2 h-2 rounded-full bg-orange-500"></div>
+          <span class="text-slate-700 font-medium">{tech.name}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a 
+        href="#contact" 
+        class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors"
+      >
+        Начать учиться бесплатно
+        <Icon name="ri:arrow-right-line" class="w-5 h-5 ml-2" />
+      </a>
+    </div>
+  </div>
+</section>

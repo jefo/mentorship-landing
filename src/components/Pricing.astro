@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const benefits = [
+  {
+    title: 'Скидка при полной оплате',
+    description: 'Получите дополнительную скидку 20% при оплате всего курса целиком. Это самый выгодный вариант для тех, кто уверен в своем решении.',
+    icon: 'ri:percent-line',
+    iconBg: 'bg-indigo-100',
+    iconColor: 'text-indigo-600'
+  },
+  {
+    title: 'Гибкая рассрочка без переплат',
+    description: 'Разделите стоимость на комфортные ежемесячные платежи. Никаких скрытых комиссий и дополнительных процентов.',
+    icon: 'ri:bank-card-line',
+    iconBg: 'bg-indigo-100',
+    iconColor: 'text-indigo-600'
+  },
+  {
+    title: 'Гарантия возврата средств',
+    description: 'Если вы поймете, что курс вам не подходит, мы вернем оплату за неиспользованную часть обучения. Никаких дополнительных условий и скрытых правил.',
+    icon: 'ri:shield-check-line',
+    iconBg: 'bg-emerald-100',
+    iconColor: 'text-emerald-600'
+  }
+];
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-slate-900 mb-4">
+        Доступные цены и способы сэкономить
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Мы стремимся сделать менторство доступным, поэтому предлагаем несколько вариантов оплаты и возможностей сэкономить
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {benefits.map((benefit) => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+          <div class={`w-12 h-12 rounded-xl ${benefit.iconBg} flex items-center justify-center mb-6`}>
+            <span class="sr-only">{benefit.title}</span>
+            <Icon name={benefit.icon} class={`w-6 h-6 ${benefit.iconColor}`} />
+          </div>
+          
+          <h3 class="text-xl font-bold text-slate-900 mb-4">
+            {benefit.title}
+          </h3>
+          
+          <p class="text-slate-600">
+            {benefit.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

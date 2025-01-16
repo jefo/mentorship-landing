@@ -1,0 +1,90 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const steps = [
+  {
+    title: 'Как устроена учёба',
+    description: 'Узнаете, как устроен курс, какая вас ждёт нагрузка и кто будет помогать вам учиться',
+    tag: 'Знакомство с курсом'
+  },
+  {
+    title: 'Входной тест',
+    description: 'Ответите на несколько вопросов и решите, подходит ли вам эта программа',
+    tag: 'Тестирование'
+  }
+];
+---
+
+<section class="py-24 bg-[#18191B]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-12">
+      <div>
+        <h2 class="text-4xl font-bold text-white mb-4">
+          Программу обновляем раз в полгода,<br />
+          чтобы вы учились только актуальному
+        </h2>
+        <p class="text-lg text-slate-400">
+          Рассчитана на 6 месяцев, в среднем учёбе нужно уделять от 15 часов в неделю
+        </p>
+      </div>
+
+      <a href="#" class="inline-flex items-center bg-slate-800 hover:bg-slate-700 text-white rounded-lg px-6 py-3 transition-colors">
+        <span>Скачать подробную программу в PDF</span>
+      </a>
+    </div>
+
+    <div class="bg-[#1E1F23] rounded-2xl p-8">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="text-slate-400">~1 час</div>
+        <div class="px-3 py-1 rounded-full bg-[#1A3D32] text-emerald-400 text-sm">
+          Бесплатно
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold text-white mb-4">
+        Знакомство и входной тест
+      </h3>
+      <p class="text-lg text-slate-400 mb-8">
+        В бесплатной части познакомитесь с учебной платформой и проверите свои знания
+      </p>
+
+      <div class="flex flex-wrap gap-3 mb-12">
+        <span class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300">
+          Знакомство с курсом
+        </span>
+        <span class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300">
+          Платформа
+        </span>
+        <span class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300">
+          Нагрузка
+        </span>
+        <span class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300">
+          Тестирование
+        </span>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {steps.map((step) => (
+          <div>
+            <h4 class="text-xl font-bold text-white mb-3">{step.title}</h4>
+            <p class="text-slate-400">{step.description}</p>
+          </div>
+        ))}
+        <div>
+          <h4 class="text-xl font-bold text-white mb-3">
+            Пройдёте входной тест и поймёте, подходит ли вам курс
+          </h4>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a 
+          href="#" 
+          class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg px-8 py-4 transition-colors"
+        >
+          Начать учиться бесплатно
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

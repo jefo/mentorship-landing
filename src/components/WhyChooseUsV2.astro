@@ -1,0 +1,203 @@
+---
+import { Icon } from 'astro-icon/components';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+
+const advantages = [
+  {
+    title: 'Дешевле курсов, лучше самообучения',
+    description: 'Персональная программа обучения позволяет сфокусироваться только на том, что нужно именно вам. Никаких лишних тем и потерянного времени. Результат достигается в 2-3 раза быстрее, чем на курсах.',
+    icon: 'ri:money-dollar-circle-line',
+    image: '/images/cost-effective.svg',
+    metrics: ['1-3 месяца вместо 6-12', 'Экономия до 70% бюджета', 'Только нужные навыки']
+  },
+  {
+    title: 'Ментор всегда на связи',
+    description: 'Застряли с задачей? Ваш персональный ментор доступен 24/7 через чат. Никаких ожиданий ответа "до следующего урока" - получайте помощь тогда, когда она нужна.',
+    icon: 'ri:customer-service-2-line',
+    image: '/images/mentor-support.svg',
+    metrics: ['Ответ в течение часа', 'Код ревью в тот же день', 'Помощь с выбором технологий']
+  },
+  {
+    title: 'Точечная прокачка навыков',
+    description: 'Как профессиональный тренер в спортзале, мы определяем слабые места и составляем программу точечной тренировки. Никаких типовых курсов - только те упражнения, которые нужны именно вам для роста.',
+    icon: 'ri:focus-2-line',
+    image: '/images/focused-training.svg',
+    metrics: ['Диагностика слабых мест', 'Индивидуальный план развития', 'Измеримый прогресс']
+  },
+  {
+    title: 'Гарантированный рост дохода',
+    description: 'Наша программа нацелена на конкретный результат - увеличение вашей зарплаты. Мы готовим вас к собеседованиям, прокачиваем технический язык и помогаем уверенно презентовать свои навыки.',
+    icon: 'ri:line-chart-line',
+    image: '/images/salary-growth.svg',
+    metrics: ['Рост зарплаты на 100-150%']
+  }
+];
+---
+
+<style>
+  .advantages-section {
+    @apply relative py-24;
+  }
+
+  .advantages-container {
+    @apply flex mx-auto max-w-7xl h-[800px] bg-white rounded-2xl shadow-lg overflow-hidden;
+  }
+
+  .advantages-nav {
+    @apply w-[40%] border-r border-slate-100 py-12 px-8;
+  }
+
+  .content-section {
+    @apply w-[60%] relative;
+  }
+
+  .swiper {
+    @apply w-full h-full;
+  }
+
+  .swiper-slide {
+    @apply h-full opacity-0 transition-opacity duration-500;
+  }
+
+  .swiper-slide-active {
+    @apply opacity-100;
+  }
+
+  .advantage-content {
+    @apply h-full flex items-center p-12;
+  }
+
+  .content-inner {
+    @apply max-w-2xl mx-auto;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-4 p-6 cursor-pointer transition-all duration-300 rounded-2xl mb-4;
+  }
+
+  .nav-item:not(.active) {
+    @apply opacity-50 hover:opacity-80;
+  }
+
+  .nav-item.active {
+    @apply bg-indigo-50;
+  }
+
+  .nav-item.active .nav-icon {
+    @apply bg-indigo-600 text-white;
+  }
+
+  .nav-icon {
+    @apply w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center transition-colors duration-300;
+  }
+
+  .metrics-grid {
+    @apply grid gap-4 mt-12;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .metric-item {
+    @apply flex items-start gap-3 p-6 rounded-xl bg-slate-50 border border-slate-100;
+  }
+
+  .metric-icon {
+    @apply w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center;
+  }
+
+  .metric-value {
+    @apply text-2xl font-bold text-slate-900 mb-1;
+  }
+
+  .metric-label {
+    @apply text-sm text-slate-600;
+  }
+</style>
+
+<section class="advantages-section" id="why-choose-us">
+  <div class="text-center mb-16">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
+      Почему выбирают нашу программу
+    </h2>
+    <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+      Персональный подход к развитию каждого разработчика
+    </p>
+  </div>
+
+  <div class="advantages-container">
+    <nav class="advantages-nav">
+      <div class="progress-line">
+        <div class="progress-indicator"></div>
+      </div>
+      
+      {advantages.map((item, index) => (
+        <div class={`nav-item ${index === 0 ? 'active' : ''}`} data-index={index}>
+          <div class="nav-icon">
+            <Icon name={item.icon} class="w-6 h-6" />
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">{item.title}</h3>
+            <p class="text-sm text-slate-600 line-clamp-2">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </nav>
+
+    <div class="content-section">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {advantages.map((item) => (
+            <div class="swiper-slide">
+              <div class="advantage-content">
+                <div class="content-inner">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    class="w-full h-64 object-contain mb-8"
+                  />
+                  <h3 class="text-2xl font-bold mb-4">{item.title}</h3>
+                  <p class="text-slate-600 mb-8">{item.description}</p>
+                  
+                  <div class="metrics-grid">
+                    {item.metrics.map((metric) => (
+                      <div class="metric-item">
+                        <div class="metric-icon">
+                          <Icon name="ri:checkbox-circle-line" class="w-5 h-5" />
+                        </div>
+                        <div>
+                          <div class="metric-value">{metric}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { EffectFade } from 'swiper/modules';
+  
+  const swiper = new Swiper('.swiper', {
+    modules: [EffectFade],
+    effect: 'fade',
+    allowTouchMove: false,
+  });
+
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const index = parseInt(item.dataset.index);
+      swiper.slideTo(index);
+      
+      navItems.forEach((navItem) => navItem.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+</script>

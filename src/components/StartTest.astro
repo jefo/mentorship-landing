@@ -1,0 +1,90 @@
+---
+const pricing = {
+  monthly: {
+    amount: 30500,
+    period: 'мес',
+    duration: 'на 6 месяцев,',
+    condition: 'при оплате по частям'
+  },
+  full: {
+    amount: 173000,
+    period: '₽',
+    duration: 'за весь курс,',
+    condition: 'при полной оплате со скидкой'
+  }
+};
+---
+
+<section class="py-24 bg-slate-900 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-bold text-white mb-4">
+          Начните с бесплатного теста —<br />
+          убедитесь сами, что программа<br />
+          вам подходит
+        </h2>
+        <p class="text-slate-400 mb-12">
+          Оплатить курс можно частями или в рассрочку — выберите комфортный для вас вариант
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-8 mb-12">
+          <div>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-3xl font-bold text-white">{pricing.monthly.amount}</span>
+              <span class="text-xl text-white">₽/{pricing.monthly.period}</span>
+            </div>
+            <p class="text-slate-400">
+              {pricing.monthly.duration}<br />
+              {pricing.monthly.condition}
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-3xl font-bold text-white">{pricing.full.amount}</span>
+              <span class="text-xl text-white">{pricing.full.period}</span>
+            </div>
+            <p class="text-slate-400">
+              {pricing.full.duration}<br />
+              {pricing.full.condition}
+            </p>
+          </div>
+        </div>
+
+        <a 
+          href="#" 
+          class="inline-flex items-center bg-white hover:bg-slate-50 text-slate-900 font-medium rounded-xl px-8 py-4 transition-colors"
+        >
+          Пройти бесплатный тест и начать учиться
+        </a>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-square">
+          <img
+            src="/images/test-preview.webp"
+            alt="Пройдите бесплатный тест"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Декоративные элементы -->
+        <div class="absolute -top-8 -right-8 w-48 h-48 bg-orange-500/20 rounded-full blur-2xl"></div>
+        <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-indigo-500/20 rounded-full blur-2xl"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Фоновые декоративные элементы -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(51,65,85,0.5)_0%,transparent_60%)]"></div>
+  </div>
+</section>
+
+<style>
+  .aspect-square {
+    aspect-ratio: 1;
+  }
+</style>
